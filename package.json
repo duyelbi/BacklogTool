@@ -1,6 +1,6 @@
 {
-  "name": "backlog-bulk-issue-registration-gas",
-  "version": "2.5.2",
+  "name": "backlog-tool",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nulab/backlog-bulk-issue-registration-gas.git"
+    "url": "git+https://github.com/duyelbi/BacklogTool.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nulab/backlog-bulk-issue-registration-gas/issues"
+    "url": "https://github.com/duyelbi/BacklogTool/issues"
   },
-  "homepage": "https://github.com/nulab/backlog-bulk-issue-registration-gas#readme",
+  "homepage": "https://github.com/duyelbi/BacklogTool#readme",
   "devDependencies": {
     "@types/google-apps-script": "1.0.20",
     "@types/jest": "^26.0.19",

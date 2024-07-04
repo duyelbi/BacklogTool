@@ -21,6 +21,9 @@ export interface BacklogClient {
    */
   getIssueV2: (idOrKey: IdOrKey<Issue>) => Option<Issue>,
 
+
+  getIssuesV2: (id: Id<Project>) => Issue[],
+
   /**
    * 課題を追加します。追加に成功した場合は、追加された課題が返ります。
    *
@@ -166,6 +169,11 @@ export class BacklogClientImpl implements BacklogClient {
     } catch (e) {
       return None()
     }
+  }
+
+  public getIssuesV2(id: Id<Project>): Issue[] {
+    const json = this.http.get(this.buildUri(`projects/${id}`))
+    return Object.keys(json).map(key => this.jsonToIssue(json[key]))
   }
 
   public createIssueV2(issue: Issue): Either<Error, Issue> {

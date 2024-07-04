@@ -26,6 +26,9 @@
           case "run":
             google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).run(formObject);
             break;
+          case "get":
+            google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).get(formObject);
+            break;
           default:
             alert("Unknown mode: " + mode);
         }

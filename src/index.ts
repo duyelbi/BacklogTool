@@ -13,6 +13,7 @@ global.onOpen = function() {
     .createMenu("Backlog")
     .addItem(service.getMessage("menu_step1"), "init_d")
     .addItem(service.getMessage("menu_step2"), "run_d")
+    .addItem(service.getMessage("menu_step3"), "get_d")
     .addToUi()
 }
 
@@ -40,12 +41,28 @@ global.run_d = function () {
     )
 }
 
+global.get_d = function () {
+  const html = HtmlService.createTemplateFromFile("index") as any
+
+  html.mode = "get"
+  SpreadsheetApp
+    .getUi()
+    .showModelessDialog(
+      html.evaluate(),
+      service.getMessage("title_get") + " " + SCRIPT_VERSION
+    )
+}
+
 global.init = function (property: UserProperty) {
   service.init(property)
 }
 
 global.run = function (property: UserProperty) {
   service.run(property)
+}
+
+global.get = function (property: UserProperty) {
+  service.get(property)
 }
 
 global.getConfig = function () {

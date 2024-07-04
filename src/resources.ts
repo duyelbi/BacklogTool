@@ -14,6 +14,10 @@ const messages = {
     "en": "Backlog Execute bulk issue registration",
     "ja": "Backlog 課題一括登録"
   },
+  "title_get" : {
+    "en": "Backlog Get Issues",
+    "ja": "バックログの問題の取得"
+  },
   "menu_step1" : {
     "en": "STEP1: Acquire data from Backlog",
     "ja": "STEP1: Backlogからデータを取得する"
@@ -21,6 +25,10 @@ const messages = {
   "menu_step2" : {
     "en": "STEP2: Execute bulk issue registration",
     "ja": "STEP2: 課題一括登録を実行"
+  },
+  "menu_step3" : {
+    "en": "STEP3: Get Issues",
+    "ja": "STEP3: 問題を取得する"
   },
   "complete_init" : {
     "en": "Acquired definitions from Backlog",
