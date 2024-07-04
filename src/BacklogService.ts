@@ -58,7 +58,7 @@ export const relatedCustomFieldDefinitions = (issueTypes: List<IssueType>, custo
       const applicableIssueTypeIds = definition.applicableIssueTypes
       const issueTypeIds = issueTypes.map(x => x.id)
       for (const id of issueTypeIds) {
-        if (applicableIssueTypeIds.includes(id)){
+        if (applicableIssueTypeIds.includes(id)) {
           related.push(definition)
         }
       }

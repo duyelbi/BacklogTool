@@ -2,7 +2,7 @@ import {Http} from "./Http"
 import {DateFormatter, BacklogClientImpl} from "./BacklogClient"
 import {getProject, validate, relatedIssueTypes, relatedCustomFieldDefinitions} from "./BacklogService"
 import {Left} from "./Either"
-import {Message} from './resources'
+import {Message} from "./resources"
 
 class FakeHttp implements Http {
   public get(uri: string): JSON {
@@ -174,7 +174,7 @@ describe("BacklogService for validate", function () {
     ]
     const issueTypes = client.getIssueTypesV2(12345)
     const customFieldDefinitions = client.getCustomFieldsV2(12345)
-    const result = validate(issues, issueTypes, customFieldDefinitions, client, 'en')
+    const result = validate(issues, issueTypes, customFieldDefinitions, client, "en")
     expect(result.isRight).toBe(true)
   })
 
@@ -190,7 +190,7 @@ describe("BacklogService for validate", function () {
     ]
     const issueTypes = client.getIssueTypesV2(12345)
     const customFieldDefinitions = client.getCustomFieldsV2(12345)
-    const result = validate(issues, issueTypes, customFieldDefinitions, client, 'en')
+    const result = validate(issues, issueTypes, customFieldDefinitions, client, "en")
     expect(result.isLeft).toBe(true)
     result.recover(function(error) {
       expect(error.message).toBe(Message.VALIDATE_CUSTOM_FIELD_VALUE_IS_REQUIRED_UNSUPPORTED(customFieldDefinitions[0].name, "en"))
@@ -236,7 +236,7 @@ describe("BacklogService for validate", function () {
         }
       ]`
     )
-    const result = validate(issues, issueTypes, customFieldDefinitions, client, 'en')
+    const result = validate(issues, issueTypes, customFieldDefinitions, client, "en")
     expect(result.isLeft).toBe(true)
     result.recover(function(error) {
       expect(error.message).toBe(Message.VALIDATE_CUSTOM_FIELD_VALUE_IS_REQUIRED_UNSUPPORTED(customFieldDefinitions[0].name, "en"))
